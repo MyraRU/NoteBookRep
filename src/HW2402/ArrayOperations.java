@@ -1,6 +1,8 @@
 package HW2402;
 
 
+import java.util.Arrays;
+
 final class ArrayOperations {
 
     static void maxIndex(int[] arr) {
@@ -39,14 +41,30 @@ final class ArrayOperations {
         System.out.println(sumArr);
     }
 
+    static void replace (int[] arr, int oldInt, int newInt){
+        for (int i = 0; i < arr.length ; i++) {
+            if (oldInt == arr[i]){
+                arr[i] = newInt;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
     public static void main(String[] args) {
         ArrayOperations arrayOperations = new ArrayOperations();
-        int arr[] = {-2, 3, 4, 10, 15, 1};
+        int arr[] = {3, -2, 4, 10, 15, 1};
 
-        arrayOperations.minIndex(arr);
-        arrayOperations.maxIndex(arr);
-        System.out.println(arrayOperations.indexOf(arr, 10));
-        arrayOperations.sum(arr);
+        arrayOperations.minIndex(arr);                                    // Вывод index минимального числа в массиве
+
+        arrayOperations.maxIndex(arr);                                    // Вывод index максимального числа в массиве
+
+        System.out.println(arrayOperations.indexOf(arr, 11));      // Поиск числа 11 в массиве и вывод его index, иначе -1
+
+        arrayOperations.sum(arr);                                         // Вывод суммы чисел находящихся масиве
+
+        arrayOperations.replace(arr,3,33);                   // Поиск в массиве числа 3, если такое есть то заменить его на 33
+
+
     }
 }
 
